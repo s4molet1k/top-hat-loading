@@ -20,9 +20,32 @@
     <script type="text/javascript" src="js/thirdparty/jquery.js"></script>
   </head>
   <body>
-   <audio autoplay controls loop hidden>
-                <source src="https://cdn.discordapp.com/attachments/1137215163280400394/1143538314947866714/bgm.wav" type="audio/ogg" volume="-1000">
-            </audio>
+<audio autoplay controls loop hidden id="bgm">
+  <source src="" type="audio/ogg" volume="1">
+</audio>
+
+<script>
+  // Создаем массив с ссылками на музыкальные композиции
+  var musicList = [
+    "https://cdn.discordapp.com/attachments/1137215163280400394/1143538314947866714/bgm.wav",
+    "https://cdn.discordapp.com/attachments/1137215163280400394/1145384129073000458/1.mp3",
+    "https://cdn.discordapp.com/attachments/1137215163280400394/1145384128783585300/2.mp3",
+	"https://cdn.discordapp.com/attachments/1137215163280400394/1145384128485785732/3.mp3",
+	"https://cdn.discordapp.com/attachments/1137215163280400394/1145384128116699226/4.mp3",
+	"https://cdn.discordapp.com/attachments/1137215163280400394/1145384127797923953/5.mp3",
+	"https://cdn.discordapp.com/attachments/1137215163280400394/1145384127453986918/6.mp3"
+  ];
+
+  // Получаем ссылку на элемент аудио
+  var audioElement = document.getElementById("bgm");
+
+  // Генерируем случайное число от 0 до musicList.length - 1
+  var randomIndex = Math.floor(Math.random() * musicList.length);
+
+  // Устанавливаем случайно выбранную композицию в качестве источника аудио
+  audioElement.src = musicList[randomIndex];
+</script>
+
     <div class="verticalhorizontal">
       <img src="img/tophat.gif" alt="" width="256px"/>
     </div>
